@@ -1,0 +1,25 @@
+<div class="example-container">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name"></h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav>
+      <mat-nav-list>
+        <a mat-list-item href="#" (click)="onSelectRandomQuestion()">Random Question</a>
+        <a mat-list-item href="#" *ngFor="let question of questions" (click)="onSelectQuestion(question)">Question {{ question.id }}</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div *ngIf="selectedQuestion">
+        {{ selectedQuestion.title }}
+        <p class="code-snippet">{{ selectedQuestion.code }}</p>
+        <button mat-button *ngFor="let option of selectedQuestion.options">
+          poo
+        </button>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
