@@ -8,6 +8,10 @@ export interface Question {
   }[];
   explanation: string;
 }
+export interface Answer {
+  correct: boolean;
+  text: string;
+}
 export const quiz: Question[] =  [
         {
             id: 1,

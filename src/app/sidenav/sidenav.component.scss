@@ -30,6 +30,22 @@ h1.example-app-name {
   flex: 1 0 auto;
 }
 
-.code-snippet {
-  white-space: pre-wrap;
+.button-container {
+  button {
+    margin: 24px;
+    width: 400px;
+    white-space: normal;
+  }
+}
+
+.explanation-container {
+  padding: 10%;
+}
+
+.quiz-container {
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
