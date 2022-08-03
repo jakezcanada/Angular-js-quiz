@@ -1,35 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HighlightModule, HighlightOptions, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { MaterialModule } from '../material.module'
 
 import { AppComponent } from './app.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { QuizComponent } from './quiz/quiz.component';
+import { Routes, RouterModule } from '@angular/router';
 
+const routes: Routes = [
+  {path: 'home/:id', loadChildren: () => import('./question/question.module').then(m => m.QuestionModule)},
+  {path: '', redirectTo: '/home/1', pathMatch: 'full'}
+]
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidenavComponent,
-    QuizComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HighlightModule
+    RouterModule.forRoot(routes)
   ],
   providers: [
     {
       provide: HIGHLIGHT_OPTIONS,
-      useValue: <HighlightOptions>{
-        coreLibraryLoader: () => import('highlight.js/lib/core'),
-        themePath: 'node_modules/highlight.js/styles/androidstudio.css',
-        languages: {
-          typescript: () => import('highlight.js/lib/languages/typescript'),
-        },
+      useValue: {
+        fullLibraryLoader: () => import('highlight.js'),
       }
     }
   ],
