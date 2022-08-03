@@ -1,4 +1,4 @@
-# Javascript Quiz Made With Angular 14
+# Javascript Quiz Made With Angular 14 and Angular Material
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
