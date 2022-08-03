@@ -17,7 +17,10 @@ export class QuestionComponent implements OnInit, AfterViewInit, OnDestroy{
   routeListener: Subscription | undefined;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.routeListener = this.activatedRoute.params.subscribe(params => {
+      this.hasAnswered = false;
+      this.selectedAnswer = undefined;
       this.selectedId = params['id'];
       this.selectedQuestion = this.questions[this.selectedId-1];
     });

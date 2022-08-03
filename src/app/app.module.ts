@@ -20,7 +20,7 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})
   ],
   providers: [
     {

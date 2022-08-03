@@ -30,8 +30,6 @@ export class AppComponent {
 
   resetQuestion(): void{
     this.router.navigate(['home', this.selectedQuestion?.id]);
-    this.hasAnswered = false;
-    this.selectedAnswer = undefined;
   }
 
 }
