@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.is-mobile .toolbar {
+  position: fixed;
+  z-index: 2;
+}
+
+h1.app-name {
+  margin-left: 8px;
+}
+
+.sidenav-container {
+  flex: 1;
+}
+
+.is-mobile .sidenav-container {
+  flex: 1 0 auto;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.menu-button {
+  height: 60px;
+  width: 60px;
+}
+
+.icon-display {
+  transform: scale(1.5);
+}
+
+.leaderboard-container {
+  width: 40vw;
+  padding: 25px;
+}
+
+.name-input-container {
+  width: 50%;
+  padding: 10px;
+}
+
+.score-input-container {
+  width: 20%;
+  padding: 10px;
+}
+
+.leaderboard-title {
+  font: 400 24px/32px Roboto, "Helvetica Neue", sans-serif;
+  padding: 10px;
+}
+
+.leaderboard-item {
+  padding: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

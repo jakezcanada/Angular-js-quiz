@@ -1,0 +1,37 @@
+  <div class="leaderboard-container">
+    <div *ngIf="selectedLeaderboard">
+      <button mat-icon-button (click)="onReturnToLeaderboardList()"><mat-icon>arrow_back</mat-icon></button>
+      <div class="leaderboard-title">{{ selectedLeaderboard.title }}</div>
+      <div>
+        <button mat-flat-button>export <mat-icon>file_upload</mat-icon></button>
+      </div>
+      <mat-nav-list>
+        <form #f="ngForm" (ngSubmit)="onAddPlayer(f)">
+          <mat-form-field appearance="outline" color="accent" class="name-input-container">
+            <mat-label>Name</mat-label>
+            <input ngModel required name="name" #name="ngModel" matInput>
+          </mat-form-field>
+          <mat-form-field appearance="outline" color="accent" class="score-input-container">
+            <mat-label>Score</mat-label>
+            <input ngModel required name="score" #score="ngModel" type="number" matInput>
+          </mat-form-field>
+          <button mat-raised-button type="submit">Add</button>
+        </form>
+        <a mat-list-item *ngFor="let player of selectedLeaderboard.players">
+          {{player.name}}
+          <span class="spacer"></span>
+          {{player.score}}
+        </a>
+      </mat-nav-list>
+    </div>
+    <div *ngIf="!selectedLeaderboard">
+      <h1 class="app-name">List of Leaderboards</h1>
+      <button mat-flat-button (click)="onCreateNewLeaderboard()" >new leaderboard <mat-icon>add</mat-icon></button>
+      <mat-nav-list cdkDropList (cdkDropListDropped)="drop($event)">
+        <div mat-list-item cdkDrag class="leaderboard-item" *ngFor="let leaderboard of leaderboards" (click)="onSelectLeaderboard(leaderboard)">
+          <!--add icons for actions n stuff-->
+          {{ leaderboard.title }}
+        </div>
+      </mat-nav-list>
+    </div>
+  </div>
