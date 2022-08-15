@@ -18,11 +18,13 @@ export class QuestionComponent implements OnInit, AfterViewInit, OnDestroy{
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    this.routeListener = this.activatedRoute.params.subscribe(params => {
+    this.routeListener = this.activatedRoute.params.subscribe((params: any) => {
       this.hasAnswered = false;
       this.selectedAnswer = undefined;
       this.selectedId = params['id'];
-      this.selectedQuestion = this.questions[this.selectedId-1];
+      this.selectedQuestion = this.questions.find(
+        (question) => question.id == this.selectedId
+      );
     });
   }
 
@@ -41,6 +43,6 @@ export class QuestionComponent implements OnInit, AfterViewInit, OnDestroy{
     if(!this.hasAnswered && !answer.correct)
       this.selectedAnswer = answer;
     this.hasAnswered = true;
-  } 
+  }
 
 }
