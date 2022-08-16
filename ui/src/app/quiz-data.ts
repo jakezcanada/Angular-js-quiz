@@ -264,70 +264,59 @@ export const quiz: Question[] = [
       'console.log(018===18)\n' +
       'console.log(019===19)\n' +
       'console.log(020===20)',
+
     options: [
       {
         correct: true,
-        text: 'false true true false',
-      },
-      {
-        correct: false,
-        text: 'false true false false',
-      },
-      {
-        correct: false,
-        text: 'false false false false',
-      },
-      {
-        correct: false,
-        text: 'true true true true',
+        text: 'Respond with the output',
       },
     ],
-    explanation: 'This is how base 8 and Chrome works.',
+    explanation: 'false true true false. This is how base 8 and Chrome works.',
   },
   {
     id: 10.2,
-    title: 'What are the outputs? JUST Type the output in the Chat window',
+    title: 'What are the outputs? ',
     code: 'console.log("b"+"a"+ +"a"+"a")',
     options: [
       {
         correct: true,
-        text: 'NaN',
+        text: 'Respond with the output',
       },
     ],
-    explanation: 'NaN',
+    explanation: 'baNaNa, NaN',
   },
   {
     id: 10.3,
-    title: 'What are the outputs? JUST Type the output in the Chat window',
-    code: 'console.log(9999999999999999);\nconsole.log(typeof NaN);',
+    title: 'What are the outputs?',
+    code: 'console.log(999999999999999); 15 9s\nconsole.log(9999999999999999); 16 9s\nconsole.log(typeof NaN);',
     options: [
       {
         correct: true,
-        text: 'Rounding and NaN is a number',
+        text: 'Respond with the output',
       },
     ],
-    explanation: 'Rounding and NaN is a number',
+    explanation: '999999999999999,10000000000000000, Due to Rounding, type nan is number',
   },
   {
     id: 10.4,
-    title: 'What are the outputs? JUST Type the output in the Chat window',
-    code: 'console.log(0.5+0.1==0.6);\nconsole.log(0.1+0.2==0.3)',
+    title: 'What are the outputs? ',
+    code: 'console.log(0.5+0.1==0.6);\nconsole.log(0.05+0.01==0.06);\nconsole.log(0.1+0.2==0.3)\nconsole.log(0.01+0.02==0.03)',
     options: [
       {
         correct: true,
-        text: 'Rounding',
+        text: 'Respond with the output',
       },
     ],
-    explanation: 'Rounding',
+    explanation: 'Rounding, true false false true',
   },
   {
     id: 10.5,
-    title: 'What are the outputs? JUST Type the output in the Chat window',
+    title: 'What are the outputs? ',
     code: 'console.log(Math.max());\nconsole.log(Math.min())',
     options: [
       {
         correct: true,
-        text: '-Infinity Infinity',
+        text: 'Respond with the output',
       },
     ],
     explanation: '-Infinity Infinity',
@@ -335,40 +324,29 @@ export const quiz: Question[] = [
   {
     id: 10.6,
     title:
-      'What are the outputs? This is a 3 pointers question. JUST Type the output in the Chat window',
+      'What are the outputs? This is a 3 pointers question.',
     code: 'console.log([]+[]);\nconsole.log([]+{});\nconsole.log({}+[]);\nconsole.log((!+[]+[]+[]).length);\nconsole.log((!+[]+[]+![]).length);',
     options: [
       {
         correct: true,
-        text: "'',[object Object],0,4,9",
+        text: 'Respond with the output',
       },
     ],
     explanation: "'',[object Object],0,4,9",
   },
   {
     id: 10.7,
-    title: 'What are the outputs?  JUST Type the output in the Chat window',
-    code: 'console.log([1,2,3,11,22,33].sort());',
+    title: 'What are the outputs?',
+    code: 'console.log([1,2,3,11,22,33].sort());\nconsole.log(91-"1",9+"1");',
     options: [
       {
         correct: true,
-        text: '[1, 11, 2, 22, 3, 33]',
+        text: 'Respond with the output',
       },
     ],
-    explanation: '[1, 11, 2, 22, 3, 33]',
+    explanation: '[1, 11, 2, 22, 3, 33],90 91,+ is converting string to number',
   },
-  {
-    id: 10.8,
-    title: 'What are the outputs?  JUST Type the output in the Chat window',
-    code: 'console.log(91-"1",9+"1");',
-    options: [
-      {
-        correct: true,
-        text: '90 91',
-      },
-    ],
-    explanation: '+ is converting string to number',
-  },
+
   {
     id: 11,
     title: "11. What's the output?",
