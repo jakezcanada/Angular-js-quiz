@@ -4,6 +4,7 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { MaterialModule } from '../material-module';
 import { QuestionComponent } from './question.component';
 import { RouterModule, Routes } from '@angular/router';
+import {CountdownTimerModule} from "../countdown-timer/countdown-timer.module";
 
 const routes: Routes = [
   {path: '**', component: QuestionComponent}
@@ -17,7 +18,8 @@ const routes: Routes = [
     CommonModule,
     MaterialModule,
     HighlightModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    CountdownTimerModule
   ],
   providers: [],
 })

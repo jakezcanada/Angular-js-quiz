@@ -1,0 +1,13 @@
+<mat-slider style="width: 100%"
+            thumbLabel
+            [displayWith]="formatLabel"
+            (change)="onTimeChange($event)"
+            tickInterval="1"
+            step="1"
+            min="0"
+            max="10"
+            aria-label="units"></mat-slider>
+<div id="countdown">
+  <div id='tiles' class="color-full"></div>
+  <div class="countdown-label">Time Remaining</div>
+</div>
