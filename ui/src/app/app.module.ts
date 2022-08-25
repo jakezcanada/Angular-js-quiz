@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
-import { MaterialModule } from '../material.module'
+import { MaterialModule } from '../material.module';
 
 import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
